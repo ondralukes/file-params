@@ -2,7 +2,7 @@
 ## Usage
 Apply the package as a middleware to your express app
 ```
-const fileParams = require('./index');
+const fileParams = require('file-params');
 const express = require('express');
 
 const app = express();
@@ -29,7 +29,7 @@ Input file
 
 Code
 ```
-const fileParams = require('./index');
+const fileParams = require('file-params');
 const express = require('express');
 
 const app = express();

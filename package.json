@@ -1,6 +1,6 @@
 {
   "name": "file-params",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Module for sending files via express with replaced parameters",
   "main": "index.js",
   "scripts": {
