@@ -1,0 +1,31 @@
+{
+  "name": "file-params",
+  "version": "0.0.1",
+  "description": "Module for sending files via express with replaced parameters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ondralukes/file-params.git"
+  },
+  "keywords": [
+    "express",
+    "file",
+    "params"
+  ],
+  "author": {
+    "name": "Ondrej Lukes",
+    "email": "mail@ondralukes.cz",
+    "url": "https://www.ondralukes.cz"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ondralukes/file-params/issues"
+  },
+  "homepage": "https://github.com/ondralukes/file-params#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
