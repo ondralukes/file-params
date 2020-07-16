@@ -3,7 +3,9 @@ const express = require('express');
 
 const app = express();
 
-app.use(fileParams());
+app.use(fileParams({
+    delimiter: ';'
+}));
 
 app.get('/', (req, res) => {
     res.sendFileParams('sample-file.html', {

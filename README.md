@@ -7,8 +7,11 @@ const express = require('express');
 
 const app = express();
 
-app.use(fileParams());
+app.use(fileParams({
+    delimiter: ';'
+}));
 ```
+`delimiter` - Optional - Character used to denote params in files
 
 Use the `sendFileParams(filename, params)` function
 ```
@@ -24,7 +27,7 @@ app.get('/', (req, res) => {
 ## Sample output
 Input file
 ```
-<h1>`a``space``b`</h1>
+<h1>;a;;space;;b;</h1>
 ```
 
 Code
@@ -34,7 +37,9 @@ const express = require('express');
 
 const app = express();
 
-app.use(fileParams());
+app.use(fileParams({
+    delimiter: ';'
+}));
 
 app.get('/', (req, res) => {
     res.sendFileParams('sample-file.html', {

@@ -4,7 +4,14 @@ function getParamValue(params, name){
     return params[name];
 }
 
-module.exports = () => {
+module.exports = (options) => {
+    let delimiter = '`';
+    if(typeof options.delimiter === 'string'){
+        if(options.delimiter.length !== 1){
+            throw 'Delimiter must be 1 character long.';
+        }
+        delimiter = options.delimiter;
+    }
     return (req, res, next) => {
         res.sendFileParams = (filename, params) => {
             const stream = fs.createReadStream(filename);
@@ -15,7 +22,7 @@ module.exports = () => {
 
                 const delimiterIndexes = [];
                 let index = -1;
-                while((index = chunk.indexOf('`', index + 1)) !== -1){
+                while((index = chunk.indexOf(delimiter, index + 1)) !== -1){
                     delimiterIndexes.push(index);
                 }
 
