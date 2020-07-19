@@ -6,11 +6,13 @@ function getParamValue(params, name){
 
 module.exports = (options) => {
     let delimiter = '`';
-    if(typeof options.delimiter === 'string'){
-        if(options.delimiter.length !== 1){
-            throw 'Delimiter must be 1 character long.';
+    if(typeof options !== 'undefined') {
+        if (typeof options.delimiter === 'string') {
+            if (options.delimiter.length !== 1) {
+                throw 'Delimiter must be 1 character long.';
+            }
+            delimiter = options.delimiter;
         }
-        delimiter = options.delimiter;
     }
     return (req, res, next) => {
         res.sendFileParams = (filename, params) => {
